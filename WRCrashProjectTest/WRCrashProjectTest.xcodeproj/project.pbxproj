@@ -14,6 +14,9 @@
 		1AADC4081F23945700BB73D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AADC4071F23945700BB73D9 /* Assets.xcassets */; };
 		1AADC40B1F23945700BB73D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AADC4091F23945700BB73D9 /* LaunchScreen.storyboard */; };
 		1AADC4161F23945700BB73D9 /* WRCrashProjectTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AADC4151F23945700BB73D9 /* WRCrashProjectTestTests.m */; };
+		1AADC4231F23996500BB73D9 /* NSObject+WRCrashProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AADC4221F23996500BB73D9 /* NSObject+WRCrashProject.m */; };
+		1AADC4261F239EEB00BB73D9 /* NSArray+WRCrashProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AADC4251F239EEB00BB73D9 /* NSArray+WRCrashProject.m */; };
+		1AADC4291F23A64200BB73D9 /* NSMutableArray+WRCrashProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AADC4281F23A64200BB73D9 /* NSMutableArray+WRCrashProject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,12 @@
 		1AADC4111F23945700BB73D9 /* WRCrashProjectTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WRCrashProjectTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AADC4151F23945700BB73D9 /* WRCrashProjectTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WRCrashProjectTestTests.m; sourceTree = "<group>"; };
 		1AADC4171F23945700BB73D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AADC4211F23996500BB73D9 /* NSObject+WRCrashProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WRCrashProject.h"; sourceTree = "<group>"; };
+		1AADC4221F23996500BB73D9 /* NSObject+WRCrashProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WRCrashProject.m"; sourceTree = "<group>"; };
+		1AADC4241F239EEB00BB73D9 /* NSArray+WRCrashProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+WRCrashProject.h"; sourceTree = "<group>"; };
+		1AADC4251F239EEB00BB73D9 /* NSArray+WRCrashProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+WRCrashProject.m"; sourceTree = "<group>"; };
+		1AADC4271F23A64200BB73D9 /* NSMutableArray+WRCrashProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+WRCrashProject.h"; sourceTree = "<group>"; };
+		1AADC4281F23A64200BB73D9 /* NSMutableArray+WRCrashProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+WRCrashProject.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +124,12 @@
 		1AADC4201F2394EF00BB73D9 /* WRCrashProject */ = {
 			isa = PBXGroup;
 			children = (
+				1AADC4211F23996500BB73D9 /* NSObject+WRCrashProject.h */,
+				1AADC4221F23996500BB73D9 /* NSObject+WRCrashProject.m */,
+				1AADC4241F239EEB00BB73D9 /* NSArray+WRCrashProject.h */,
+				1AADC4251F239EEB00BB73D9 /* NSArray+WRCrashProject.m */,
+				1AADC4271F23A64200BB73D9 /* NSMutableArray+WRCrashProject.h */,
+				1AADC4281F23A64200BB73D9 /* NSMutableArray+WRCrashProject.m */,
 			);
 			path = WRCrashProject;
 			sourceTree = "<group>";
@@ -223,6 +238,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AADC4291F23A64200BB73D9 /* NSMutableArray+WRCrashProject.m in Sources */,
+				1AADC4261F239EEB00BB73D9 /* NSArray+WRCrashProject.m in Sources */,
+				1AADC4231F23996500BB73D9 /* NSObject+WRCrashProject.m in Sources */,
 				1AADC4031F23945700BB73D9 /* ViewController.m in Sources */,
 				1AADC4001F23945700BB73D9 /* AppDelegate.m in Sources */,
 				1AADC3FD1F23945700BB73D9 /* main.m in Sources */,
@@ -367,7 +385,7 @@
 				INFOPLIST_FILE = WRCrashProjectTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = video.wangrui.com.WRCrashProjectTest;
+				PRODUCT_BUNDLE_IDENTIFIER = video.wangrui.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -380,7 +398,7 @@
 				INFOPLIST_FILE = WRCrashProjectTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = video.wangrui.com.WRCrashProjectTest;
+				PRODUCT_BUNDLE_IDENTIFIER = video.wangrui.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

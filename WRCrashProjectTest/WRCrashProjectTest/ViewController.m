@@ -16,7 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    NSArray *arrM = @[@"1",@"2",@"3"];
+//    NSMutableArray *arrM = [NSMutableArray arrayWithObjects:@"0",@"1", nil];
+    NSString *str = [arrM objectAtIndex:3];
+    NSLog(@"%@", str);
 }
 
 
