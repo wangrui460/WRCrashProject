@@ -11,22 +11,39 @@
 
 @implementation NSObject (WRCrashProject)
 
-+ (void)swizzleSystemMethodWithSel:(SEL)systemSelector
++ (void)swizzleSEL:(SEL)systemSEL
 {
-//    Class needSwizzledClass = [self class];
-    NSString *systemSELStr = NSStringFromSelector(systemSelector);
-    NSString *safeSELStr = [NSString stringWithFormat:@"wr_%@",systemSELStr];
-    SEL safeSelector = NSSelectorFromString(safeSELStr);
-    Method systemMethod = class_getInstanceMethod(self, systemSelector);
-    Method safeMethod = class_getInstanceMethod(self, safeSelector);
-    method_exchangeImplementations(systemMethod, safeMethod);
+    NSString *systemSELStr = NSStringFromSelector(systemSEL);
+    NSString *swizzledSELStr = [NSString stringWithFormat:@"wr_%@",systemSELStr];
+    
+    SEL swizzledSel = NSSelectorFromString(swizzledSELStr);
+    [self swizzleSEL:systemSEL withSEL:swizzledSel];
 }
 
-+ (void)swizzleSystemMethodWithSel:(SEL)systemSelector to:(SEL)safeSelector
++ (void)swizzleSEL:(SEL)originalSEL withSEL:(SEL)swizzledSEL
 {
-    Method systemMethod = class_getInstanceMethod(self, systemSelector);
-    Method safeMethod = class_getInstanceMethod(self, safeSelector);
-    method_exchangeImplementations(systemMethod, safeMethod);
+    Class class = [self class];
+    
+    // class_getInstanceMethod: 获取给定类的实例方法
+    Method originalMethod = class_getInstanceMethod(class, originalSEL);
+    Method newMethod = class_getInstanceMethod(class, swizzledSEL);
+    
+    // class_addMethod: 为给定类添加一个方法
+    // class_getTypeEncoding: 获取方法的参数和返回值
+    BOOL didAddMethod = class_addMethod(class,  //  为该类添加方法
+                                        originalSEL, //    要添加方法的方法名
+                                        method_getImplementation(newMethod), // 要添加方法的方法实现
+                                        method_getTypeEncoding(newMethod));  // 要添加方法的参数和返回值
+    
+    if (didAddMethod) {
+        // 替换给定类的给定方法的实现
+        class_replaceMethod(class,
+                            swizzledSEL,
+                            method_getImplementation(originalMethod),
+                            method_getTypeEncoding(originalMethod));
+    } else {
+        method_exchangeImplementations(originalMethod, newMethod);
+    }
 }
 
 @end

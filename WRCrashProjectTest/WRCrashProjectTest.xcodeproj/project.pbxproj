@@ -45,9 +45,7 @@
 		1AADC4171F23945700BB73D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AADC4211F23996500BB73D9 /* NSObject+WRCrashProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WRCrashProject.h"; sourceTree = "<group>"; };
 		1AADC4221F23996500BB73D9 /* NSObject+WRCrashProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WRCrashProject.m"; sourceTree = "<group>"; };
-		1AADC4241F239EEB00BB73D9 /* NSArray+WRCrashProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+WRCrashProject.h"; sourceTree = "<group>"; };
 		1AADC4251F239EEB00BB73D9 /* NSArray+WRCrashProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+WRCrashProject.m"; sourceTree = "<group>"; };
-		1AADC4271F23A64200BB73D9 /* NSMutableArray+WRCrashProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+WRCrashProject.h"; sourceTree = "<group>"; };
 		1AADC4281F23A64200BB73D9 /* NSMutableArray+WRCrashProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+WRCrashProject.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,9 +124,7 @@
 			children = (
 				1AADC4211F23996500BB73D9 /* NSObject+WRCrashProject.h */,
 				1AADC4221F23996500BB73D9 /* NSObject+WRCrashProject.m */,
-				1AADC4241F239EEB00BB73D9 /* NSArray+WRCrashProject.h */,
 				1AADC4251F239EEB00BB73D9 /* NSArray+WRCrashProject.m */,
-				1AADC4271F23A64200BB73D9 /* NSMutableArray+WRCrashProject.h */,
 				1AADC4281F23A64200BB73D9 /* NSMutableArray+WRCrashProject.m */,
 			);
 			path = WRCrashProject;
@@ -448,6 +444,7 @@
 				1AADC41C1F23945700BB73D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1AADC41D1F23945700BB73D9 /* Build configuration list for PBXNativeTarget "WRCrashProjectTestTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +453,7 @@
 				1AADC41F1F23945700BB73D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

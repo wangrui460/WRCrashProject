@@ -6,7 +6,6 @@
 //  Copyright © 2017年 wangrui. All rights reserved.
 //
 
-#import "NSArray+WRCrashProject.h"
 #import "NSObject+WRCrashProject.h"
 #import <objc/runtime.h>
 
@@ -22,36 +21,35 @@
 
 + (void)swizzle
 {
-//    id object = [self new];
-//    [object swizzleSystemMethodWithSel:@selector(objectAtIndex:)];
-    
-    
-    [objc_getClass("__NSArrayI") swizzleSystemMethodWithSel:@selector(objectAtIndex:) to:@selector(wr_objectAtIndex:)];
-    [objc_getClass("__NSArrayM") swizzleSystemMethodWithSel:@selector(objectAtIndex:) to:@selector(wr2_objectAtIndex:)];
-    
-    
-//    [objc_getClass("__NSArrayI") swizzleMethod:@selector(objectAtIndex:) withMethod:@selector(swizzleObjectAtIndexI:) error:nil];//交换不可变数组
-//    [objc_getClass("__NSArrayM") swizzleMethod:@selector(objectAtIndex:) withMethod:@selector(swizzleObjectAtIndexM:) error:nil];//交换不可变数组
+    [objc_getClass("__NSArray0") swizzleSEL:@selector(objectAtIndex:) withSEL:@selector(__NSArray0_objectAtIndex:)];
+    [objc_getClass("__NSArrayI") swizzleSEL:@selector(objectAtIndex:) withSEL:@selector(__NSArrayI_objectAtIndex:)];
+    [objc_getClass("__NSArrayM") swizzleSEL:@selector(objectAtIndex:) withSEL:@selector(__NSArrayM_objectAtIndex:)];
 }
 
-- (id)wr_objectAtIndex:(NSUInteger)index
+- (id)__NSArray0_objectAtIndex:(NSUInteger)index
+{
+    WRCrashProjectLog(@"数组为空");
+    return nil;
+}
+
+- (id)__NSArrayI_objectAtIndex:(NSUInteger)index
 {
     if (index < self.count) {
-        return [self wr_objectAtIndex:index];
+        return [self __NSArrayI_objectAtIndex:index];
     }
     else {
-        NSLog(@"数组越界了");
+        WRCrashProjectLog(@"数组越界了");
         return nil;
     }
 }
 
-- (id)wr2_objectAtIndex:(NSUInteger)index
+- (id)__NSArrayM_objectAtIndex:(NSUInteger)index
 {
     if (index < self.count) {
-        return [self wr2_objectAtIndex:index];
+        return [self __NSArrayM_objectAtIndex:index];
     }
     else {
-        NSLog(@"数组越界了");
+        WRCrashProjectLog(@"数组越界了");
         return nil;
     }
 }

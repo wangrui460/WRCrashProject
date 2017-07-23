@@ -6,7 +6,6 @@
 //  Copyright © 2017年 wangrui. All rights reserved.
 //
 
-#import "NSMutableArray+WRCrashProject.h"
 #import "NSObject+WRCrashProject.h"
 
 @implementation NSMutableArray (WRCrashProject)
@@ -21,8 +20,7 @@
 
 + (void)swizzle
 {
-//    id object = [self new];
-    [self swizzleSystemMethodWithSel:@selector(objectAtIndex:)];
+    [self swizzleSEL:@selector(objectAtIndex:)];
 }
 
 - (id)wr_objectAtIndex:(NSUInteger)index
